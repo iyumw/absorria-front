@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { FaHome, FaHeart, FaLeaf, FaUsers, FaSun, FaMoon, FaUniversity } from 'react-icons/fa';
 
-const logo = "../../public/absorria.png";
+const logo = "/absorria.png";
 
 interface SidebarProps {
   theme: string;

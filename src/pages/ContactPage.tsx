@@ -8,19 +8,19 @@ const developers = [
     name: "Amanda Ribeiro",
     github: "https://github.com/Amandyis",
     linkedin: "https://www.linkedin.com/in/amanda-ribeiro-16b307207/",
-    photo: "../../public/amanda.jpeg", // Substitua pela foto real
+    photo: "/amanda.jpeg", // Substitua pela foto real
   },
   {
     name: "Danielle Pereira",
     github: "https://github.com/DanielleSilvaPereira",
     linkedin: "https://www.linkedin.com/in/danielle-pereira-474771204/",
-    photo: "../../public/dani.jpeg", // Substitua pela foto real
+    photo: "/dani.jpeg", // Substitua pela foto real
   },
   {
     name: "Isis Okamoto",
     github: "https://github.com/iyumw",
     linkedin: "https://www.linkedin.com/in/isis-okamoto/",
-    photo: "../../public/isis.jpeg",
+    photo: "/isis.jpeg",
   },
 ];
 
