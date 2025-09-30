@@ -1,5 +1,5 @@
 import styles from "./InfoPage.module.css";
-import { FaBook, FaCode, FaLaptopCode, FaLinkedin, FaLinkedinIn, FaUniversity } from "react-icons/fa";
+import { FaBook, FaCode, FaLaptopCode, FaUniversity } from "react-icons/fa";
 
 const AboutPage = () => {
   return (

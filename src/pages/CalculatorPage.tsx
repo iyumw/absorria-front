@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PRODUCT_DATA } from "../constants/menstrualData";
-import { FaArrowLeft, FaInfoCircle } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Bar } from "react-chartjs-2";
 import styles from "./CalculatorPage.module.css";
