@@ -1,0 +1,35 @@
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* Tema Claro (Padrão) */
+:root {
+  --primary-color: #F3A2A7;
+  --secondary-color: #52B2B2;
+  --background-color: #FAF7F5;
+  --card-background: #FFFFFF;
+  --text-color: #333333;
+  --text-light: #666;
+  --border-color: #eee;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --sidebar-width: 250px;
+}
+
+/* Tema Escuro */
+.dark {
+  --primary-color: #F3A2A7;
+  --secondary-color: #5FB6B6;
+  --background-color: #22252a;
+  --card-background: #2f3238;
+  --text-color: #e5e5e5;
+  --text-light: #e0e0e0;
+  --border-color: #3c3f45;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,112 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--card-background);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 75px;      /* Ajuste conforme necessário */
+  height: auto;     /* Mantém proporção da imagem */
+  object-fit: contain; /* Evita distorção */
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navLink.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.themeToggle {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-light);
+}
+.themeToggle:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+  .brand, .themeToggle span {
+    display: none;
+  }
+  .nav {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .navLink {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+  .themeToggle {
+    margin-top: 0;
+    flex-direction: column;
+    font-size: 0.7rem;
+    gap: 0.25rem;
+  }
+}

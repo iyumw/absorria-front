@@ -1,0 +1,11 @@
+.appContainer {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--card-background);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
