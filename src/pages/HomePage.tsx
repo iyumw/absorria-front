@@ -33,7 +33,7 @@ const HomePage = () => {
           <FaInfoCircle /> O Dilema do Descartável
         </h3>
         <p>
-          O Programa de Proteção e Promoção da Saúde Menstrual é um avanço
+          O Programa do governo de Proteção e Promoção da Saúde Menstrual é um avanço
           vital. No entanto, a distribuição exclusiva de absorventes
           descartáveis, com um investimento de{" "}
           <b>R$ {PROGRAM_DATA.investmentValue.toLocaleString("pt-BR")}</b>, 

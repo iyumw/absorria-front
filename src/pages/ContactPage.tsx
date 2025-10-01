@@ -1,5 +1,3 @@
-// src/pages/ContactPage.tsx
-
 import styles from "./InfoPage.module.css";
 import { FaGithub, FaLinkedinIn, FaBook } from "react-icons/fa";
 
@@ -29,11 +27,11 @@ const ContactPage = () => {
     <div className={styles.infoContainer}>
       <h1>Fale Conosco</h1>
       <p className={styles.intro}>
-        Conecte-se com as desenvolvedoras do projeto ou explore o repositório principal.
+        Conecte-se com as desenvolvedoras do projeto ou explore o repositório
+        principal.
       </p>
 
       <div className={styles.cardGrid}>
-
         {/* Card do Repositório Principal */}
         <div className={styles.card}>
           <h3>
@@ -43,7 +41,8 @@ const ContactPage = () => {
             Repositório do Projeto
           </h3>
           <p>
-            Todo o código-fonte da calculadora e da aplicação React está disponível neste repositório.
+            Todo o código-fonte da aplicação está
+            disponível neste repositório.
           </p>
           <a
             href="https://github.com/SI2aps/absorria"
@@ -55,22 +54,33 @@ const ContactPage = () => {
           </a>
         </div>
 
-        {/* Cards individuais das desenvolvedoras */}
+        {/* Cards individuais */}
         {developers.map((dev) => (
           <div key={dev.name} className={styles.card}>
-            <img src={dev.photo} alt={dev.name} className={styles.devPhoto} />
-            <h3>{dev.name}</h3>
-            <div className={styles.socialLinks}>
-              <a href={dev.github} target="_blank" rel="noopener noreferrer">
-                <FaGithub /> GitHub
-              </a>
-              <a href={dev.linkedin} target="_blank" rel="noopener noreferrer">
-                <FaLinkedinIn /> LinkedIn
-              </a>
+            <div className={styles.devPhotoContainer}>
+              <img src={dev.photo} alt={dev.name} className={styles.devPhoto} />
+              <div className={styles.devInfo}>
+                <h3>{dev.name}</h3>
+                <div className={styles.socialLinks}>
+                  <a
+                    href={dev.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                  <a
+                    href={dev.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedinIn /> LinkedIn
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
-
       </div>
     </div>
   );

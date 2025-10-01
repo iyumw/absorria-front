@@ -1,4 +1,3 @@
-/* Estilos Desktop (sem alterações) */
 .infoContainer {
   max-width: 900px;
   margin: 0 auto;
@@ -24,7 +23,7 @@
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem; /* Aumentei um pouco o gap para desktop */
+  gap: 1.5rem;
   justify-content: center;
 }
 
@@ -105,21 +104,32 @@
 
 /* Estilos da Página de Contato */
 .devPhoto {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 1rem auto; /* Centraliza a foto */
   display: block;
   border: 3px solid var(--secondary-color);
 }
 
+.devPhotoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.devInfo {
+  display: flex;
+  flex-direction: column;
+}
+
 .socialLinks {
   display: flex;
-  justify-content: center; /* Centraliza os links */
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 0.5rem;
 }
+
+
 
 .socialLinks a {
   display: inline-flex;
@@ -137,7 +147,6 @@
 
 .contactLink {
   display: inline-block;
-  margin-top: 1rem;
   color: var(--secondary-color);
   font-weight: 600;
   text-decoration: none;
@@ -155,10 +164,9 @@
 /* ======================================= */
 @media (max-width: 768px) {
   .infoContainer {
-    padding: 1.5rem; /* Reduz o padding geral */
+    padding: 1.5rem;
   }
 
-  /* Títulos e textos de introdução */
   .infoContainer h1 {
     font-size: 1.8rem;
   }
@@ -167,23 +175,30 @@
     margin-bottom: 2rem;
   }
 
-  /* Ajustes na grade e nos cards */
   .cardGrid {
-    /* A grade já é responsiva! Apenas ajustamos o gap. */
     gap: 1rem;
   }
 
   .card {
-    padding: 1.5rem; /* Reduz padding interno dos cards */
-    text-align: left; /* Centraliza o conteúdo do card */
+    padding: 1.5rem;
+    text-align: left;
   }
 
   .card h3 {
     font-size: 1.2rem;
-    justify-content: center; /* Centraliza o título do card */
+    justify-content: left;
   }
 
   .readMoreContainer {
     margin-top: 2rem;
+  }
+
+  .devPhotoContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socialLinks {
+    margin-top: 0;
   }
 }

@@ -1,4 +1,3 @@
-/* Estilos Desktop (sem alterações) */
 .infoContainer {
   max-width: 900px;
   margin: 0 auto;
@@ -130,7 +129,6 @@
     padding: 1.5rem;
   }
 
-  /* Empilha os botões verticalmente para facilitar o toque */
   .buttonGroup {
     flex-direction: column;
   }

@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Absorria
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do Absorria, um projeto focado na conscientização ambiental e na promoção de escolhas sustentáveis relacionadas a produtos menstruais. Este aplicativo web, construído com React e TypeScript, calcula a pegada de carbono anual de uma pessoa ao usar absorventes descartáveis e compara com a pegada caso optasse por coletores menstruais.
 
-Currently, two official plugins are available:
+## Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo do Absorria é informar os usuários sobre os impactos ambientais de suas escolhas e fornecer uma visão clara dos benefícios sustentáveis de alternativas como coletores menstruais. Através de uma interface interativa e amigável, o usuário pode inserir seus dados e visualizar os resultados de maneira clara e direta.
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Cálculo da pegada de carbono anual com base no uso de absorventes descartáveis.
 
-## Expanding the ESLint configuration
+- Comparação com a pegada de carbono anual ao usar coletores menstruais.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Interface web intuitiva com informações claras e comparativos.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Experiência responsiva, funcionando em desktop e dispositivos móveis.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tecnologias Utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React (com TypeScript)
+
+- CSS Modules para estilização
+
+- React Icons para ícones sociais e gráficos
+
+## Deploy
+
+O aplicativo está disponível online: [[Acesse o Absorria](https://absorria-front.vercel.app/contato)]
+
+## Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Certifique-se de ter instalado:
+
+  - Node.js 18.x ou superior
+
+  - npm ou yarn
+
+2. Faça um fork do repositório.
+
+3. Crie um branch para sua alteração:
+`git checkout -b minha-nova-funcionalidade`
+
+4. Commit suas alterações:
+`git commit -m "Adicionei uma nova funcionalidade"`
+
+5. Envie para o branch:
+`git push origin minha-nova-funcionalidade`
+
+6. Abra um pull request.
+
+Para rodar o projeto localmente:
+
+```
+npm install
+npm start
+ou
+yarn install
+yarn start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O aplicativo abrirá em http://localhost:5173
+.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Sinta-se à vontade para explorar, utilizar e contribuir para o Absorria. Juntos podemos criar um impacto positivo no meio ambiente!

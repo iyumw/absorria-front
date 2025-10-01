@@ -1,4 +1,3 @@
-// /src/pages/DignityPage.tsx
 import styles from "./InfoPage.module.css";
 import {
   FaBookOpen,

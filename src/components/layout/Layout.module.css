@@ -3,7 +3,6 @@
 }
 
 .mainContent {
-  /* Deixa espaço para a sidebar na versão desktop */
   margin-left: var(--sidebar-width); 
   width: calc(100% - var(--sidebar-width));
   padding: 3rem;

@@ -1,4 +1,3 @@
-// /src/pages/CarbonPage.tsx
 import styles from "./InfoPage.module.css";
 import {
   FaLeaf,
