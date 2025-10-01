@@ -175,7 +175,7 @@
 
   .card {
     padding: 1.5rem; /* Reduz padding interno dos cards */
-    text-align: center; /* Centraliza o conteúdo do card */
+    text-align: left; /* Centraliza o conteúdo do card */
   }
 
   .card h3 {
