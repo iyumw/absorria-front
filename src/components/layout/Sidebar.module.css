@@ -169,3 +169,33 @@
     height: 44px;
   }
 }
+
+/* Esconde logo no desktop, mostra ícone normal */
+.mobileLogo {
+  display: none;
+}
+
+.desktopIcon {
+  display: flex;
+}
+
+/* No mobile, inverte */
+@media (max-width: 768px) {
+  .mobileLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;  /* tamanho ajustável */
+    height: 28px;
+  }
+
+  .mobileLogo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .desktopIcon {
+    display: none;
+  }
+}

@@ -96,6 +96,7 @@
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-decoration: none;
 }
 .readMoreButton:hover {
   transform: translateY(-3px) scale(1.02);

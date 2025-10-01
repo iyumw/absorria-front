@@ -37,7 +37,13 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
               `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            <FaHome />
+            {/* Logo no mobile, ícone no desktop */}
+            <span className={styles.mobileLogo}>
+              <img src={logo} alt="Logo Absorria" />
+            </span>
+            <span className={styles.desktopIcon}>
+              <FaHome />
+            </span>
             <span>Início</span>
           </NavLink>
           <NavLink
@@ -81,6 +87,5 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
     </>
   );
 };
-
 
 export default Sidebar;
