@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react"; // 1. IMPORTAR useRef e useEffect
 import { PRODUCT_DATA } from "../constants/menstrualData";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -32,6 +32,19 @@ const CalculatorPage = () => {
     cupFootprint: number;
   } | null>(null);
 
+  // 2. CRIAR A REFERÊNCIA
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  // 4. ADICIONAR O useEffect PARA OBSERVAR MUDANÇAS E ROLAR A PÁGINA
+  useEffect(() => {
+    // Se o resultado existir e a referência estiver conectada a um elemento...
+    if (result && resultRef.current) {
+      // ...role a tela suavemente até o topo do elemento de resultado.
+      resultRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [result]); // A "dependência" do efeito é o 'result'. O código só roda quando 'result' muda.
+
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const numPads = parseInt(padsPerDay);
@@ -50,7 +63,8 @@ const CalculatorPage = () => {
 
     setResult({ padFootprint, cupFootprint });
   };
-
+  
+  // ... (o restante do código para 'chartData' continua igual)
   const chartData = result
     ? {
         labels: ["Absorventes descartáveis", "Coletor menstrual"],
@@ -132,7 +146,8 @@ const CalculatorPage = () => {
         </form>
 
         {result && (
-          <div className={styles.resultDisplay}>
+          // 3. ANEXAR A REFERÊNCIA AO CONTAINER DOS RESULTADOS
+          <div ref={resultRef} className={styles.resultDisplay}> 
             <h3>Resultados Estimados</h3>
             <Bar
               data={chartData!}

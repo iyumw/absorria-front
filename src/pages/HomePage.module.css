@@ -1,14 +1,10 @@
+/* Estilos Desktop (sem alterações) */
 .infoContainer {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
   animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .pageTitle {
@@ -60,12 +56,13 @@
   padding: 1rem 1.25rem;
   border-left: 4px solid var(--secondary-color);
   border-radius: 8px;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   background: linear-gradient(135deg, var(--secondary-color), #009688cc);
   color: white;
@@ -78,6 +75,9 @@
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-decoration: none;
+  margin: 0 auto;       /* CENTRALIZA */
+  width: fit-content;   /* Mantém só o tamanho do conteúdo */
 }
 
 .ctaButton:hover {
@@ -85,15 +85,32 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-/* SweetAlert formulário */
-:global(.swal-form) {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-align: left;
-  padding: 1rem;
+
+/* ======================================= */
+/* ====== Responsividade para Mobile ===== */
+/* ======================================= */
+@media (max-width: 768px) {
+  .infoContainer {
+    padding: 1.5rem;
+  }
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  .analogy {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .ctaButton {
+    font-size: 0.90rem;
+    padding: 0.9rem 1.8rem;
+    width: auto;        /* Deixa o botão do tamanho do conteúdo */
+    margin: 1rem auto;  /* Garante centralização */
+  }
 }
-:global(.swal-form label) {
-  font-size: 1rem;
-  color: #555;
-}
+

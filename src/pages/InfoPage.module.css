@@ -1,3 +1,4 @@
+/* Estilos Desktop (sem alterações) */
 .infoContainer {
   max-width: 900px;
   margin: 0 auto;
@@ -6,11 +7,9 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.infoContainer h1 {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .intro {
@@ -25,7 +24,7 @@
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem; /* Aumentei um pouco o gap para desktop */
   justify-content: center;
 }
 
@@ -61,25 +60,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
   background: var(--secondary-color);
   color: #fff;
   border-radius: 50%;
-  
   padding: 0;
 }
 
 .card h3 svg {
   width: 18px;
   height: 18px;
-  
   background: none;
   color: white;
   padding: 0;
   border-radius: 0;
   font-size: initial;
 }
-
 
 .readMoreContainer {
   text-align: center;
@@ -100,7 +95,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-  align-items: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 .readMoreButton:hover {
@@ -108,20 +102,21 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-/* src/pages/InfoPage.module.css (ADICIONE OU AJUSTE ESTES ESTILOS) */
-
+/* Estilos da Página de Contato */
 .devPhoto {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto; /* Centraliza a foto */
+  display: block;
   border: 3px solid var(--secondary-color);
 }
 
 .socialLinks {
   display: flex;
-  gap: 1rem;
+  justify-content: center; /* Centraliza os links */
+  gap: 1.5rem;
   margin-top: 0.5rem;
 }
 
@@ -153,3 +148,41 @@
   transform: translateY(-2px);
 }
 
+
+/* ======================================= */
+/* ====== Responsividade para Mobile ===== */
+/* ======================================= */
+@media (max-width: 768px) {
+  .infoContainer {
+    padding: 1.5rem; /* Reduz o padding geral */
+  }
+
+  /* Títulos e textos de introdução */
+  .infoContainer h1 {
+    font-size: 1.8rem;
+  }
+  .intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Ajustes na grade e nos cards */
+  .cardGrid {
+    /* A grade já é responsiva! Apenas ajustamos o gap. */
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem; /* Reduz padding interno dos cards */
+    text-align: center; /* Centraliza o conteúdo do card */
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+    justify-content: center; /* Centraliza o título do card */
+  }
+
+  .readMoreContainer {
+    margin-top: 2rem;
+  }
+}

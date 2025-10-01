@@ -1,3 +1,4 @@
+/* Estilos para Desktop (sem alterações) */
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
@@ -25,9 +26,9 @@
 }
 
 .logo {
-  width: 75px;      /* Ajuste conforme necessário */
-  height: auto;     /* Mantém proporção da imagem */
-  object-fit: contain; /* Evita distorção */
+  width: 75px;
+  height: auto;
+  object-fit: contain;
 }
 
 .nav {
@@ -73,40 +74,98 @@
   color: var(--text-color);
 }
 
-/* Responsividade para Mobile */
+
+/* ======================================= */
+/* ====== Responsividade para Mobile ===== */
+/* ======================================= */
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: fixed;
     bottom: 0;
+    top: auto;
     left: 0;
+    z-index: 1000;
+    flex-direction: row;
+    justify-content: space-evenly; /* Distribui o espaço mais uniformemente */
+    align-items: center;
     border-right: none;
     border-top: 1px solid var(--border-color);
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0.5rem;
-    z-index: 1000;
+    padding: 0.5rem 0;
   }
+
+  /* Oculta a logo e o texto do botão de tema */
   .brand, .themeToggle span {
     display: none;
   }
+
   .nav {
+    display: flex; /* Garante que o nav seja um container flex */
     flex-direction: row;
-    gap: 0;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly; /* Espaça os itens de navegação */
+    align-items: center;
+    width: 100%; /* Faz a navegação ocupar todo o espaço */
+    gap: 0.5rem; /* Adiciona um pequeno espaço entre os itens */
   }
+
   .navLink {
-    flex-direction: column;
+    display: flex; /* Essencial para o flex-direction funcionar */
+    flex-direction: column; /* FORÇA o ícone a ficar em cima do texto */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
     gap: 0.25rem;
-    font-size: 0.7rem;
+    font-size: 0.65rem; /* Reduz um pouco a fonte se necessário */
     padding: 0.5rem;
+    flex: 1; /* Faz com que todos os links ocupem o mesmo espaço */
   }
+
+  /* Faz o texto dentro do span quebrar a linha se for muito grande */
+  .navLink span {
+    text-align: center;
+    line-height: 1.2;
+  }
+
   .themeToggle {
+    /* Posiciona o botão de tema como um item flex normal no final */
     margin-top: 0;
+    padding: 0.5rem;
+    display: flex;
     flex-direction: column;
-    font-size: 0.7rem;
+    align-items: center;
+    justify-content: center;
     gap: 0.25rem;
+  }
+}
+
+.themeToggleTop {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.themeToggleTop:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .themeToggleTop {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 44px;
+    height: 44px;
   }
 }

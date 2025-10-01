@@ -46,7 +46,7 @@ const ContactPage = () => {
             Todo o código-fonte da calculadora e da aplicação React está disponível neste repositório.
           </p>
           <a
-            href="https://github.com/projeto-principal"
+            href="https://github.com/SI2aps/absorria"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.contactLink}

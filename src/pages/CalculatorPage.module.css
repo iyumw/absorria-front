@@ -1,8 +1,8 @@
+/* Estilos Desktop (sem alterações) */
 .infoContainer {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  text-align: center;
 }
 
 .pageTitle {
@@ -10,6 +10,7 @@
   font-size: 2.2rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .pageSubtitle {
@@ -17,6 +18,7 @@
   color: var(--text-light);
   margin-bottom: 2rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .card {
@@ -24,7 +26,6 @@
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2rem;
-  text-align: left;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
@@ -77,6 +78,10 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex; /* Para centralizar o ícone */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .calcButton {
@@ -96,7 +101,7 @@
 }
 
 .resultDisplay {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   text-align: center;
 }
 
@@ -104,5 +109,29 @@
   font-size: 0.95rem;
   color: var(--secondary-color);
   font-weight: 500;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+
+/* ======================================= */
+/* ====== Responsividade para Mobile ===== */
+/* ======================================= */
+@media (max-width: 768px) {
+  .infoContainer {
+    padding: 1rem;
+  }
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+
+  /* Empilha os botões verticalmente para facilitar o toque */
+  .buttonGroup {
+    flex-direction: column;
+  }
 }
