@@ -7,10 +7,12 @@ import CarbonPage from './pages/CarbonPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CalculatorPage from './pages/CalculatorPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dignidade-menstrual" element={<DignityPage />} />

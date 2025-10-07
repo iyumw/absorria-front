@@ -56,7 +56,7 @@ const ContactPage = () => {
             Acesse o código-fonte completo do nosso projeto.
           </p>
           <a
-            href="https://github.com/SI2aps/absorria"
+            href="https://github.com/iyumw/absorria-front"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.contactLink}

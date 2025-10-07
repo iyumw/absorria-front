@@ -6,6 +6,10 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+.infoContainer h1 {
+  color: var(--primary-color);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -169,6 +173,7 @@
 
   .infoContainer h1 {
     font-size: 1.8rem;
+    color: var(--primary-color);
   }
   .intro {
     font-size: 1rem;
