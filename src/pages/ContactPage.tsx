@@ -20,6 +20,18 @@ const developers = [
     linkedin: "https://www.linkedin.com/in/isis-okamoto/",
     photo: "/isis.jpeg",
   },
+  {
+    name: "Lucas Soares",
+    github: "https://github.com/snwluca",
+    linkedin: "https://www.linkedin.com/in/lucas-soares-paulino-07916414/",
+    photo: "/lucas.jpg",
+  },
+  {
+    name: "Henrique Fernandes",
+    github: "#",
+    linkedin: "#",
+    photo: "/user.jpg",
+  },
 ];
 
 const ContactPage = () => {
@@ -27,7 +39,7 @@ const ContactPage = () => {
     <div className={styles.infoContainer}>
       <h1>Fale Conosco</h1>
       <p className={styles.intro}>
-        Conecte-se com as desenvolvedoras do projeto ou explore o repositório
+        Conecte-se com os desenvolvedores do projeto ou explore o repositório
         principal.
       </p>
 
@@ -41,8 +53,7 @@ const ContactPage = () => {
             Repositório do Projeto
           </h3>
           <p>
-            Todo o código-fonte da aplicação está
-            disponível neste repositório.
+            Acesse o código-fonte completo do nosso projeto.
           </p>
           <a
             href="https://github.com/SI2aps/absorria"

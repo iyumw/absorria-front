@@ -14,23 +14,22 @@ const AboutPage = () => {
         <div className={styles.card}>
           <h3>
             <span className={styles.iconWrapper}>
-                <FaUniversity />
-            </span>   
+              <FaUniversity />
+            </span>
             Objetivo Central do Projeto
           </h3>
           <p>
-            O projeto propõe a intervenção por meio da aplicação da tecnologia
-            Python. O objetivo é conscientizar a população e exigir do Estado o
-            fornecimento de condições básicas, promovendo a adoção de
-            absorventes sustentáveis para reduzir a pegada de carbono na
-            atmosfera.
+            Este projeto se materializa em uma plataforma digital interativa. O
+            objetivo é <strong>traduzir em números o impacto ambiental</strong> de políticas
+            públicas e escolhas individuais, <strong>incentivando a adoção de
+            alternativas sustentáveis</strong> para reduzir a pegada de carbono associada ao ciclo menstrual.
           </p>
         </div>
         <div className={styles.card}>
           <h3>
             <span className={styles.iconWrapper}>
-                <FaLaptopCode />
-            </span>  
+              <FaLaptopCode />
+            </span>
             A Solução: A Calculadora de Carbono
           </h3>
           <p>
@@ -43,22 +42,23 @@ const AboutPage = () => {
         <div className={styles.card}>
           <h3>
             <span className={styles.iconWrapper}>
-                <FaCode />
-            </span>   
-            As Desenvolvedoras
+              <FaCode />
+            </span>
+            Os Desenvolvedores
           </h3>
           <p>
             O núcleo do projeto foi conduzido por um grupo de estudantes de
-            tecnologia, apaixonadas por encontrar soluções que gerem impacto
+            tecnologia, com o objetivo de encontrar soluções que gerem impacto
             positivo. Este trabalho reflete a dedicação em aplicar o
-            conhecimento técnico para promover a sustentabilidade e a dignidade.
+            conhecimento técnico para promover a sustentabilidade e a dignidade
+            menstrual.
           </p>
         </div>
         <div className={styles.card}>
           <h3>
             <span className={styles.iconWrapper}>
-                <FaBook />
-            </span>   
+              <FaBook />
+            </span>
             O Papel da Educação
           </h3>
           <p>

@@ -40,7 +40,6 @@ const CalculatorPage = () => {
     }
   }, [result]);
 
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const numPads = parseInt(padsPerDay);
@@ -59,7 +58,7 @@ const CalculatorPage = () => {
 
     setResult({ padFootprint, cupFootprint });
   };
-  
+
   // ... (o restante do código para 'chartData' continua igual)
   const chartData = result
     ? {
@@ -92,16 +91,14 @@ const CalculatorPage = () => {
       <div className={styles.card}>
         <p className={styles.introText}>
           Preencha abaixo a quantidade média de absorventes que você usa por dia
-          e a duração do seu ciclo menstrual. Nossa calculadora estimará sua{" "}
-          <strong>pegada anual de carbono</strong> e mostrará alternativas mais
-          sustentáveis.
+          e a duração do seu ciclo menstrual. Com esses dados, nossa calculadora
+          irá estimar sua <b>pegada anual de carbono</b> e a comparará com o
+          impacto que você teria ao optar pelo <b>coletor menstrual</b>.
         </p>
 
         <form onSubmit={handleSubmit} className={styles.calcForm}>
           <div className={styles.formGroup}>
-            <label htmlFor="pads">
-              Absorventes por dia:
-            </label>
+            <label htmlFor="pads">Absorventes por dia (em média):</label>
             <input
               id="pads"
               type="number"
@@ -113,9 +110,7 @@ const CalculatorPage = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="days">
-              Dias de menstruação:
-            </label>
+            <label htmlFor="days">Dias de menstruação (em média):</label>
             <input
               id="days"
               type="number"
@@ -142,7 +137,7 @@ const CalculatorPage = () => {
         </form>
 
         {result && (
-          <div ref={resultRef} className={styles.resultDisplay}> 
+          <div ref={resultRef} className={styles.resultDisplay}>
             <h3>Resultados Estimados</h3>
             <Bar
               data={chartData!}
