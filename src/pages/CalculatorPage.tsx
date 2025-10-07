@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"; // 1. IMPORTAR useRef e useEffect
+import React, { useState, useRef, useEffect } from "react";
 import { PRODUCT_DATA } from "../constants/menstrualData";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -14,14 +14,7 @@ import {
   Legend,
 } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const CalculatorPage = () => {
   const navigate = useNavigate();
@@ -59,7 +52,6 @@ const CalculatorPage = () => {
     setResult({ padFootprint, cupFootprint });
   };
 
-  // ... (o restante do código para 'chartData' continua igual)
   const chartData = result
     ? {
         labels: ["Absorventes descartáveis", "Coletor menstrual"],
@@ -160,7 +152,11 @@ const CalculatorPage = () => {
                 <strong>{result.padFootprint.toFixed(2)} kg</strong> de CO2. Ao
                 utilizar um coletor menstrual, a emissão cai para{" "}
                 <strong>{result.cupFootprint.toFixed(2)} kg</strong> de CO2,
-                representando uma redução de até 90% no impacto ambiental.
+                representando uma redução de{" "}
+                <strong>
+                  {(((result.padFootprint - result.cupFootprint) / result.padFootprint) * 100).toFixed(1)}%
+                </strong>{" "}
+                no impacto ambiental.
               </p>
               <p className={styles.tip}>
                 Dica: Alternativas reutilizáveis ajudam a preservar recursos

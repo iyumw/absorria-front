@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { PROGRAM_DATA, PRODUCT_DATA } from "../constants/menstrualData";
 import { NavLink } from "react-router-dom";
 import styles from "./HomePage.module.css";
-import { FaCalculator, FaInfoCircle } from "react-icons/fa";
+import { FaBalanceScale, FaCalculator, FaInfoCircle } from "react-icons/fa";
 
 const CO2_PER_KM_CAR = 0.12;
 
@@ -16,8 +16,26 @@ const HomePage = () => {
     const padFootprint =
       (totalPads * PRODUCT_DATA.disposablePadCarbonFootprint) /
       PRODUCT_DATA.disposablePadAnnualCycle;
+
+    const totalCups = Math.round(
+      PROGRAM_DATA.investmentValue / PROGRAM_DATA.averageCupPrice
+    );
+    const cupFootprint =
+      (totalCups * PRODUCT_DATA.cupCarbonFootprint) /
+      PRODUCT_DATA.cupAnnualCycle;
+
+    const relativeImpact = (cupFootprint / padFootprint) * 100;
+    const reduction = 100 - relativeImpact;
     const kmDriven = padFootprint / CO2_PER_KM_CAR;
-    return { totalPads, padFootprint, kmDriven };
+    return {
+      totalPads,
+      totalCups,
+      padFootprint,
+      cupFootprint,
+      relativeImpact,
+      reduction,
+      kmDriven,
+    };
   }, []);
 
   return (
@@ -33,21 +51,69 @@ const HomePage = () => {
           <FaInfoCircle /> O Dilema do Descartável
         </h3>
         <p>
-          O Programa do governo de Proteção e Promoção da Saúde Menstrual é um avanço
-          vital. No entanto, a distribuição exclusiva de absorventes
+          O Programa do governo de Proteção e Promoção da Saúde Menstrual é um
+          avanço vital. No entanto, a distribuição exclusiva de absorventes
           descartáveis, com um investimento de{" "}
-          <b>R$ {PROGRAM_DATA.investmentValue.toLocaleString("pt-BR")}</b>, 
+          <b>R$ {PROGRAM_DATA.investmentValue.toLocaleString("pt-BR")}</b>,
           geraria uma pegada de carbono de{" "}
-          <b>{(simulationResults.padFootprint / 1000).toFixed(2)} toneladas</b> de CO2.
+          <b>{(simulationResults.padFootprint / 1000).toFixed(2)} toneladas</b>{" "}
+          de CO2.
         </p>
         <p className={styles.analogy}>
           Para se ter uma ideia, esse impacto ambiental é o mesmo que um carro
-          de passeio percorrendo a <b>distância da Terra à Lua mais de 15 vezes</b>!
+          de passeio percorrendo a{" "}
+          <b>distância da Terra à Lua mais de 15 vezes</b>!
+        </p>
+      </div>
+
+      <div className={styles.card}>
+        <h3>
+          <FaBalanceScale /> Comparativo: Absorvente x Coletor
+        </h3>
+        <p>
+          Se o mesmo valor fosse aplicado em{" "}
+          <strong>coletores menstruais</strong>, o impacto cairia para apenas{" "}
+          <b>{(simulationResults.cupFootprint / 1000).toFixed(2)} toneladas</b>{" "}
+          de CO₂.
         </p>
         <p>
-          A boa notícia? Investir em alternativas sustentáveis, como o coletor
-          menstrual, poderia <b>reduzir essa pegada em mais de 90%</b>,
-          mostrando que dignidade e sustentabilidade podem e devem andar juntas.
+          Isso representa apenas{" "}
+          <b>{simulationResults.relativeImpact.toFixed(1)}%</b> do impacto dos
+          absorventes — ou seja, uma{" "}
+          <b>redução de cerca de {simulationResults.reduction.toFixed(1)}%</b>.
+        </p>
+
+        <div className={styles.barComparison}>
+          <div className={styles.barLabel}>
+            Absorvente Descartável ({simulationResults.padFootprint.toFixed(0)}{" "}
+            kg CO₂)
+          </div>
+          <div className={styles.barWrapper}>
+            <div
+              className={styles.barAbsorvente}
+              style={{ width: "100%" }}
+            ></div>
+          </div>
+
+          <div className={styles.barLabel}>
+            Coletor Menstrual ({simulationResults.cupFootprint.toFixed(0)} kg
+            CO₂)
+          </div>
+          <div className={styles.barWrapper}>
+            <div
+              className={styles.barColetor}
+              style={{
+                width: `${simulationResults.relativeImpact.toFixed(1)}%`,
+              }}
+            ></div>
+          </div>
+        </div>
+
+        <p>
+          A comparação mostra, de forma simples, como{" "}
+          <strong>escolhas sustentáveis </strong>
+          podem reduzir drasticamente as emissões e ainda promover{" "}
+          <strong>dignidade menstrual</strong>.
         </p>
       </div>
 

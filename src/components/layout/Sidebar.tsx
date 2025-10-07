@@ -8,6 +8,7 @@ import {
   FaSun,
   FaMoon,
   FaUniversity,
+  FaCalculator,
 } from "react-icons/fa";
 
 const logo = "/absorria.png";
@@ -37,7 +38,6 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
               `${styles.navLink} ${isActive ? styles.active : ""}`
             }
           >
-            {/* Logo no mobile, ícone no desktop */}
             <span className={styles.mobileLogo}>
               <img src={logo} alt="Logo Absorria" />
             </span>
@@ -46,6 +46,19 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
             </span>
             <span>Início</span>
           </NavLink>
+
+          <NavLink
+            to="/calculadora"
+            className={({ isActive }) =>
+              `${styles.navLink} ${styles.desktopOnly} ${
+                isActive ? styles.active : ""
+              }`
+            }
+          >
+            <FaCalculator />
+            <span>Calculadora Individual</span>
+          </NavLink>
+
           <NavLink
             to="/dignidade-menstrual"
             className={({ isActive }) =>
@@ -55,6 +68,7 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
             <FaHeart />
             <span>Dignidade Menstrual</span>
           </NavLink>
+
           <NavLink
             to="/mercado-de-carbono"
             className={({ isActive }) =>
@@ -64,6 +78,7 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
             <FaLeaf />
             <span>Mercado de Carbono</span>
           </NavLink>
+
           <NavLink
             to="/sobre"
             className={({ isActive }) =>
@@ -73,6 +88,7 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
             <FaUniversity />
             <span>Sobre o Projeto</span>
           </NavLink>
+
           <NavLink
             to="/contato"
             className={({ isActive }) =>
@@ -82,6 +98,8 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
             <FaUsers />
             <span>Fale Conosco</span>
           </NavLink>
+
+          
         </nav>
       </aside>
     </>

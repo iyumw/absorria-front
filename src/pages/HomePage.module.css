@@ -113,3 +113,37 @@
   }
 }
 
+.barComparison {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.barLabel {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.barWrapper {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.barAbsorvente {
+  height: 100%;
+  background-color: #f28b8b; /* rosa claro */
+  border-radius: 10px;
+}
+
+.barColetor {
+  height: 100%;
+  background-color: #6cc0a1; /* verde menta */
+  border-radius: 10px;
+}
+
+
